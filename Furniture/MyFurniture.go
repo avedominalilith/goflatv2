@@ -1,4 +1,4 @@
-package MyFurniture
+package Furniture
 
 import "fmt"
 

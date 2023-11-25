@@ -1,4 +1,4 @@
-package MyPeople
+package People
 
 import "fmt"
 

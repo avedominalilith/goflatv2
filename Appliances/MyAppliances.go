@@ -1,4 +1,4 @@
-package MyAppliances
+package Appliances
 
 import "fmt"
 

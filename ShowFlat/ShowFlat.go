@@ -1,20 +1,20 @@
 package ShowFlat
 
 import (
-	"goflatv2/MyAppliances"
-	"goflatv2/MyFlat"
-	"goflatv2/MyFurniture"
-	"goflatv2/MyPeople"
+	"goflatv2/Appliances"
+	"goflatv2/Flat"
+	"goflatv2/Furniture"
+	"goflatv2/People"
 )
 
 func ShowFlat() {
-	appliances := MyAppliances.InitAppliances()
-	furniture := MyFurniture.FillFurniture()
-	people := MyPeople.InitPeople()
-	flat := MyFlat.InsideRooms()
+	appliances := Appliances.InitAppliances()
+	furniture := Furniture.FillFurniture()
+	people := People.InitPeople()
+	flat := Flat.InsideRooms()
 
-	MyAppliances.ShowAppliances(appliances)
-	MyFurniture.ShowFurniture(furniture)
-	MyPeople.ShowFamily(people)
-	MyFlat.ShowRoomsSizes(flat)
+	Appliances.ShowAppliances(appliances)
+	Furniture.ShowFurniture(furniture)
+	People.ShowFamily(people)
+	Flat.ShowRoomsSizes(flat)
 }

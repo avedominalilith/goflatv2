@@ -1,4 +1,4 @@
-package MyFlat
+package Flat
 
 import (
 	"fmt"
