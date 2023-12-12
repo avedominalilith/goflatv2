@@ -1,12 +1,12 @@
-FROM golang:1.21
+RUN go build -o goflatv2 ./main.go
+FROM golang:1.21-alpine
 
-WORKDIR /usr/src/app
+RUN go version
+ENV GOPATH=/
 
-# pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
-COPY go.mod
-RUN go mod download && go mod verify
+COPY ./ ./
 
-COPY . .
-RUN go build -o goflatv2 ./FlatReview.go
+RUN go mod download
+RUN go build -o goflatv2 ./main.go
 
-CMD [".goflatv2"]
+CMD ["./goflatv2"]
