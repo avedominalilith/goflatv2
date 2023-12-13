@@ -1,7 +1,7 @@
 package main
 
-import "goflatv2/ShowFlat"
+import "goflatv2/House"
 
 func main() {
-	ShowFlat.ShowFlat()
+	House.ShowHouse()
 }
