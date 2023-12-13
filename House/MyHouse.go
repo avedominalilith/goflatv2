@@ -1,20 +1,20 @@
-package ShowFlat
+package House
 
 import (
 	"goflatv2/Appliances"
-	"goflatv2/Flat"
 	"goflatv2/Furniture"
 	"goflatv2/People"
+	"goflatv2/Rooms"
 )
 
-func ShowFlat() {
+func ShowHouse() {
 	appliances := Appliances.InitAppliances()
-	furniture := Furniture.FillFurniture()
+	furniture := Furniture.InitFurniture()
 	people := People.InitPeople()
-	flat := Flat.InsideRooms()
+	rooms := Rooms.InitRooms()
 
 	Appliances.ShowAppliances(appliances)
 	Furniture.ShowFurniture(furniture)
-	People.ShowFamily(people)
-	Flat.ShowRoomsSizes(flat)
+	People.ShowPeople(people)
+	Rooms.ShowRooms(rooms)
 }

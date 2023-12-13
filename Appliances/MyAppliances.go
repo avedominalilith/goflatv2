@@ -2,32 +2,25 @@ package Appliances
 
 import "fmt"
 
-type Appliances struct {
-	name string
+type StructAppliances struct {
+	Name string
+	Room string
 }
 
-func InitAppliances() []Appliances {
-	playstation := Appliances{
-		name: "плэйстэйшен",
+func InitAppliances() []StructAppliances {
+	appliances := []StructAppliances{
+		{"телевизор", "Гостинная"},
+		{"компьютер", "Кабинет"},
+		{"стиральная машина", "Ванная"},
+		{"холодильник", "Кухня"},
+		{"чайник", "Кухня"},
 	}
-	computer := Appliances{
-		name: "компьютер",
-	}
-	vacuum := Appliances{
-		name: "пылесос",
-	}
-	fridge := Appliances{
-		name: "холодильник",
-	}
-	electrokettle := Appliances{
-		name: "электрочайник",
-	}
-	return []Appliances{playstation, computer, vacuum, fridge, electrokettle}
+	return appliances
 }
 
-func ShowAppliances(Appliances []Appliances) {
-	fmt.Printf("Техника в доме:\n")
-	for _, appliances := range Appliances {
-		fmt.Println(appliances.name, " ")
+func ShowAppliances(appliances []StructAppliances) {
+	fmt.Println("\nТехника:")
+	for _, ObjAppliances := range appliances {
+		fmt.Printf("%s (%s)\n", ObjAppliances.Name, ObjAppliances.Room)
 	}
 }

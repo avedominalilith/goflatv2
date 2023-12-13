@@ -2,33 +2,27 @@ package Furniture
 
 import "fmt"
 
-type Furniture struct {
-	name string
+type StructFurniture struct {
+	Name string
+	h    int
+	w    int
+	l    int
 }
 
-func FillFurniture() []Furniture {
-	sofa := Furniture{
-		name: "Диван",
+func InitFurniture() []StructFurniture {
+	furniture := []StructFurniture{
+		{"диван", 100, 120, 300},
+		{"кресло", 100, 120, 80},
+		{"стол", 90, 90, 90},
+		{"шкаф", 200, 70, 100},
+		{"полка", 50, 30, 100},
 	}
-	shelf := Furniture{
-		name: "Полка",
-	}
-	bed := Furniture{
-		name: "Кровать",
-	}
-	desk := Furniture{
-		name: "Стол",
-	}
-	armchair := Furniture{
-		name: "Кресло",
-	}
-	return []Furniture{sofa, shelf, bed, armchair, desk}
+	return furniture
 }
 
-func ShowFurniture(Furniture []Furniture) {
-	fmt.Printf("Мебель в доме:\n")
-	for _, furniture := range Furniture {
-		fmt.Printf("%s\n", furniture.name)
+func ShowFurniture(furniture []StructFurniture) {
+	fmt.Println("\nМебель:")
+	for _, ObjFurniture := range furniture {
+		fmt.Printf("Предмет мебели: %s\nВысота: %d см\nШирина: %d см\nДлина: %d см\n", ObjFurniture.Name, ObjFurniture.h, ObjFurniture.w, ObjFurniture.l)
 	}
-	fmt.Print("\n")
 }
