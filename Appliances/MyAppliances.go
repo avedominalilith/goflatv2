@@ -7,20 +7,30 @@ type StructAppliances struct {
 	Room string
 }
 
-func InitAppliances() []StructAppliances {
-	appliances := []StructAppliances{
-		{"телевизор", "Гостинная"},
-		{"компьютер", "Кабинет"},
-		{"стиральная машина", "Ванная"},
-		{"холодильник", "Кухня"},
-		{"чайник", "Кухня"},
-	}
-	return appliances
+func InitAppliances() StructAppliances {
+	var a StructAppliances
+	fmt.Println("Название устройства: ")
+	fmt.Scanln(&a.Name)
+	fmt.Println("Комната: ")
+	fmt.Scanln(&a.Room)
+	return a
 }
 
-func ShowAppliances(appliances []StructAppliances) {
+func InfoAppliances(a StructAppliances) {
+	fmt.Printf("Название устройства: %s, комната: %s\n", a.Name, a.Room)
+}
+
+func ShowAppliances() {
+	var numAppliances int
+	fmt.Print("Количество девайсов: ")
+	fmt.Scanln(&numAppliances)
+	var appliances []StructAppliances
+	for i := 0; i < numAppliances; i++ {
+		appliance := InitAppliances()
+		appliances = append(appliances, appliance)
+	}
 	fmt.Println("\nТехника:")
-	for _, ObjAppliances := range appliances {
-		fmt.Printf("%s (%s)\n", ObjAppliances.Name, ObjAppliances.Room)
+	for _, appliance := range appliances {
+		InfoAppliances(appliance)
 	}
 }

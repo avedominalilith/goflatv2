@@ -8,13 +8,9 @@ import (
 )
 
 func ShowHouse() {
-	appliances := Appliances.InitAppliances()
-	furniture := Furniture.InitFurniture()
-	people := People.InitPeople()
-	rooms := Rooms.InitRooms()
+	Appliances.ShowAppliances()
+	Furniture.ShowFurniture()
+	People.ShowPeople()
+	Rooms.ShowRooms()
 
-	Appliances.ShowAppliances(appliances)
-	Furniture.ShowFurniture(furniture)
-	People.ShowPeople(people)
-	Rooms.ShowRooms(rooms)
 }

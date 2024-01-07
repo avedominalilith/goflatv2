@@ -4,25 +4,42 @@ import "fmt"
 
 type StructFurniture struct {
 	Name string
-	h    int
-	w    int
-	l    int
+	Room string
+	h    float64
+	w    float64
+	l    float64
 }
 
-func InitFurniture() []StructFurniture {
-	furniture := []StructFurniture{
-		{"диван", 100, 120, 300},
-		{"кресло", 100, 120, 80},
-		{"стол", 90, 90, 90},
-		{"шкаф", 200, 70, 100},
-		{"полка", 50, 30, 100},
+func InitFurniture() StructFurniture {
+	var f StructFurniture
+	fmt.Println("Название предмета мебели: ")
+	fmt.Scanln(&f.Name)
+	fmt.Println("Комната: ")
+	fmt.Scanln(&f.Room)
+	fmt.Println("Высота: ")
+	fmt.Scanln(&f.h)
+	fmt.Println("Ширина: ")
+	fmt.Scanln(&f.w)
+	fmt.Println("Длина: ")
+	fmt.Scanln(&f.l)
+	return f
+}
+
+func InfoFurniture(f StructFurniture) {
+	fmt.Printf("Название предмета: %s, комната: %s, занимаемая площадь: %.2f кв м, высота: %.2f м\n", f.Name, f.Room, f.l*f.w, f.h)
+}
+
+func ShowFurniture() {
+	var numFurniture int
+	fmt.Print("Количество предметов мебели: ")
+	fmt.Scanln(&numFurniture)
+	var furniture []StructFurniture
+	for i := 0; i < numFurniture; i++ {
+		objFurniture := InitFurniture()
+		furniture = append(furniture, objFurniture)
 	}
-	return furniture
-}
-
-func ShowFurniture(furniture []StructFurniture) {
 	fmt.Println("\nМебель:")
-	for _, ObjFurniture := range furniture {
-		fmt.Printf("Предмет мебели: %s\nВысота: %d см\nШирина: %d см\nДлина: %d см\n", ObjFurniture.Name, ObjFurniture.h, ObjFurniture.w, ObjFurniture.l)
+	for _, objFurniture := range furniture {
+		InfoFurniture(objFurniture)
 	}
 }
