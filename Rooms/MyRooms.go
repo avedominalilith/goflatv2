@@ -1,12 +1,15 @@
 package Rooms
 
-import "fmt"
+import (
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+)
 
 type RoomsStruct struct {
-	Name string
-	h    float64
-	w    float64
-	l    float64
+	Name      string
+	heightInM float64
+	widthInM  float64
+	lengthInM float64
 }
 
 func InitRooms() RoomsStruct {
@@ -14,19 +17,19 @@ func InitRooms() RoomsStruct {
 	fmt.Println("Название комнаты: ")
 	fmt.Scanln(&r.Name)
 	fmt.Println("Высота: ")
-	fmt.Scanln(&r.h)
+	fmt.Scanln(&r.heightInM)
 	fmt.Println("Ширина: ")
-	fmt.Scanln(&r.w)
+	fmt.Scanln(&r.widthInM)
 	fmt.Println("Длина: ")
-	fmt.Scanln(&r.l)
+	fmt.Scanln(&r.lengthInM)
 	return r
 }
 
 func InfoRooms(r RoomsStruct) {
-	fmt.Printf("Название комнаты: %s, площадь: %.2f кв и, высота потолков: %.2f м\n", r.Name, r.l*r.w, r.h)
+	fmt.Printf("Название комнаты: %s, площадь: %.2f кв и, высота потолков: %.2f м\n", r.Name, r.lengthInM*r.widthInM, r.heightInM)
 }
 
-func ShowRooms() {
+func CreateRooms() {
 	var numRooms int
 	fmt.Print("Количество комнат: ")
 	fmt.Scanln(&numRooms)

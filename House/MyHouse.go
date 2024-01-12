@@ -7,10 +7,10 @@ import (
 	"goflatv2/Rooms"
 )
 
-func ShowHouse() {
-	Appliances.ShowAppliances()
-	Furniture.ShowFurniture()
-	People.ShowPeople()
-	Rooms.ShowRooms()
+func CreateHouse() {
+	Appliances.CreateAppliances()
+	Furniture.CreateFurniture()
+	People.CreatePeople()
+	Rooms.CreateRooms()
 
 }

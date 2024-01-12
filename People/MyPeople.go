@@ -3,27 +3,27 @@ package People
 import "fmt"
 
 type StructPeople struct {
-	fName string
-	lName string
-	Age   int
+	firstName string
+	lastName  string
+	Age       int
 }
 
 func InitPeople() StructPeople {
 	var p StructPeople
 	fmt.Println("Имя: ")
-	fmt.Scanln(&p.fName)
+	fmt.Scanln(&p.firstName)
 	fmt.Println("Фамилия: ")
-	fmt.Scanln(&p.lName)
+	fmt.Scanln(&p.lastName)
 	fmt.Println("Возраст: ")
 	fmt.Scanln(&p.Age)
 	return p
 }
 
 func InfoPeople(p StructPeople) {
-	fmt.Printf("Проживающий: %s %s, возраст: %d\n", p.fName, p.lName, p.Age)
+	fmt.Printf("Проживающий: %s %s, возраст: %d\n", p.firstName, p.lastName, p.Age)
 }
 
-func ShowPeople() {
+func CreatePeople() {
 	var numPeople int
 	fmt.Print("Количество обитателей дома: ")
 	fmt.Scanln(&numPeople)
