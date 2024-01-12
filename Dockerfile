@@ -1,12 +1,10 @@
-RUN go build -o goflatv2 ./main.go
 FROM golang:1.21-alpine
 
-RUN go version
-ENV GOPATH=/
+WORKDIR /go/scr/goflatv2
 
-COPY ./ ./
+COPY . .
 
-RUN go mod download
-RUN go build -o goflatv2 ./main.go
+RUN go build -o goflatv2
 
 CMD ["./goflatv2"]
+
