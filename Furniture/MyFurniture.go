@@ -3,11 +3,11 @@ package Furniture
 import "fmt"
 
 type StructFurniture struct {
-	Name string
-	Room string
-	h    float64
-	w    float64
-	l    float64
+	Name      string
+	Room      string
+	heightInM float64
+	widthInM  float64
+	lengthInM float64
 }
 
 func InitFurniture() StructFurniture {
@@ -17,16 +17,16 @@ func InitFurniture() StructFurniture {
 	fmt.Println("Комната: ")
 	fmt.Scanln(&f.Room)
 	fmt.Println("Высота: ")
-	fmt.Scanln(&f.h)
+	fmt.Scanln(&f.heightInM)
 	fmt.Println("Ширина: ")
-	fmt.Scanln(&f.w)
+	fmt.Scanln(&f.widthInM)
 	fmt.Println("Длина: ")
-	fmt.Scanln(&f.l)
+	fmt.Scanln(&f.lengthInM)
 	return f
 }
 
 func InfoFurniture(f StructFurniture) {
-	fmt.Printf("Название предмета: %s, комната: %s, занимаемая площадь: %.2f кв м, высота: %.2f м\n", f.Name, f.Room, f.l*f.w, f.h)
+	fmt.Printf("Название предмета: %s, комната: %s, занимаемая площадь: %.2f кв м, высота: %.2f м\n", f.Name, f.Room, f.lengthInM*f.widthInM, f.heightInM)
 }
 
 func CreateFurniture() {
