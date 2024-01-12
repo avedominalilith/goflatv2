@@ -29,7 +29,7 @@ func InfoFurniture(f StructFurniture) {
 	fmt.Printf("Название предмета: %s, комната: %s, занимаемая площадь: %.2f кв м, высота: %.2f м\n", f.Name, f.Room, f.l*f.w, f.h)
 }
 
-func ShowFurniture() {
+func CreateFurniture() {
 	var numFurniture int
 	fmt.Print("Количество предметов мебели: ")
 	fmt.Scanln(&numFurniture)

@@ -23,7 +23,7 @@ func InfoPeople(p StructPeople) {
 	fmt.Printf("Проживающий: %s %s, возраст: %d\n", p.fName, p.lName, p.Age)
 }
 
-func ShowPeople() {
+func CreatePeople() {
 	var numPeople int
 	fmt.Print("Количество обитателей дома: ")
 	fmt.Scanln(&numPeople)

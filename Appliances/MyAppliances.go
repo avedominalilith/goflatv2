@@ -20,7 +20,7 @@ func InfoAppliances(a StructAppliances) {
 	fmt.Printf("Название устройства: %s, комната: %s\n", a.Name, a.Room)
 }
 
-func ShowAppliances() {
+func CreateAppliances() {
 	var numAppliances int
 	fmt.Print("Количество девайсов: ")
 	fmt.Scanln(&numAppliances)
