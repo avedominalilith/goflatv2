@@ -2,7 +2,6 @@ package Rooms
 
 import (
 	"fmt"
-	_ "github.com/go-sql-driver/mysql"
 )
 
 type RoomsStruct struct {
